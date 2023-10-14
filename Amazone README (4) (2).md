@@ -126,14 +126,6 @@ XGBoost's feature importance is used here to provide a ranking of features based
 
 
 
-SARIMA appears to be the best-performing model among the options listed. It has the lowest MAE, MSE, and RMSE, indicating that it provides the most accurate predictions with relatively low error rates. The MAPE is also below 10%, suggesting that, on average, its predictions are within 10% of the actual Amazon stock prices.
-FB Prophet, while having a low MAPE, has significantly higher errors in terms of MAE, MSE, and RMSE compared to SARIMA. This indicates that it might not be as accurate as SARIMA in predicting Amazon stock prices.
-The Simple RNN model performs better than FB Prophet in terms of MAE, MSE, and RMSE, but it is not as accurate as SARIMA, as it has higher error rates.
-The LSTM with original features model with original features has similar performance to the Simple RNN model, with slightly higher MAPE and RMSE. It is less accurate than SARIMA.
-The LSTM model with important features has a similar performance to the Simple RNN model, with a slightly lower RMSE. However, it still does not perform as well as SARIMA in terms of accuracy.
-In summary, the SARIMA model outperforms the other models in predicting Amazon stock prices, as it has the lowest MAE, MSE, and RMSE, along with a reasonably low MAPE. The other models have higher errors and are less accurate in comparison.
-
-
 # ** Conclusion
 
 
