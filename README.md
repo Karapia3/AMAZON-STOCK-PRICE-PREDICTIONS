@@ -1,19 +1,21 @@
-# Time series analysis and modelling - Stock Market Predictions
+# AMAZON STOCK PRICE PREDICTIONS 
+<img width="480" alt="Bulls and bears" src="https://github.com/Karapia3/Capstone/assets/128484473/7e909eae-0bd9-49ec-8785-4af3c73b6ea0">
 
-![Amazon](images/Amazon price.png)
+
 
 ## **A. Business Overview**
 
-• Stock price prediction is a challenging but
-important task in the financial industry.  
-• Traditional stock price prediction methods
-have limitations.  
+• Stock price prediction, especially short-term, is difficult due
+to market volatility. Investors require precise forecasts for
+Amazon stock decisions.
+• Creating dependable models for Amazon stock prediction
+aids informed investor decisions. Developing accurate models
+and their practical application is the challenge.
 
 
 ## **1.2 Problem Statement**
-The  major challenge of this project is to accurately predict the future closing value of a given
-stock across a given period of time in the future using LSTM.
-Bulls and Bears seek to develop a reliable predictive model that helps investors make informed decisions about their Amazon stock holdings to maximize returns while managing risks.
+The primary challenge in predicting stock prices, especially in the short term, is the inherent volatility and unpredictability of the stock market. Investors and fund managers often face the problem of making optimal investment decisions. They need accurate forecasts to decide when to buy, sell, or hold Amazon's stock, but the accuracy of predictions can vary widely. Bulls and Bears seek to develop a reliable predictive model that helps investors make informed decisions about their Amazon stock holdings to maximize returns while managing risks. This problem encompasses the need for accurate predictions and the application of these predictions to real-world investment strategies.
+
 ### **1.3 General Objectives
 To develop a robust stock price prediction model for Amazon stock market.
 
@@ -141,35 +143,45 @@ In summary, the SARIMA-2 model outperforms the other models in predicting Amazon
 
 
 # ** Conclusion
-From our time series analysis SARIMA-2 model performed the best with MAE score of 0.0506, MSE score of 0.0047 RMSE score of 0.0683 and MAPE score of 9.6815 compared to other models we used which were:
+From our time series analysis SARIMA-2 model performed the best with MAE score of 0.0506, MSE score of 0.0047 RMSE score of 0.0683 and MAPE score of 9.6815 compared to the other models we used which were:
+1. FB Prophet
+2. Simple RNN
+3. LSTM-original features
+4. LSTM-Important features
 
-FB Prophet
-Simple RNN
-LSTM-original features
-LSTM-Important features
 SARIMA-2 model performed well for short term predictions however long term predictions brought wide variations.
 
-The top 8 features which highly influenced the price predictions in the amazon stock market are: Close, High, Returns, Rolling_Std, Volume, Open, ROC, RSI.
+
+The top 8 features which highly influenced the price predictions in the amazon stock market are:
+Close price,
+Highest price,
+Returns,
+Rolling_Std,
+Volume,
+Open price,
+Rate Of Change,
+Relative Strength Index.
 
 
 
 # ** Recommendition
+1. Investors and financial institutions can use the model for short term prediction of Amazon stock prices to determine the general trend of the amazon prices. However other factor such as fundamental analysis need to be consider before making the final decision.
+
+2. Our deployment model can also be improved and used for predicting other stock markets other than Amazon stocks only.
+
+3. For better performance of the LSTM model, more data is required for analysis. More data will enhance the model’s ability to recognize patterns and trends.
+
+4. Carry out sentimental analysis alongside the model to factor in the impact of news and public sentiment on stock prices changes. This analysis will provide valuable contextual information.
+
+5. Experiment with different train-test split ratios to evaluate how the model’s performance is affected by the division of data. This will help determine the optimal balance between the training and testing data that gives better performance of the model.
+
+6. Coming up with a model that can predict other stock markets, not just Amazon. This will provide valuable insights from diverse stock markets  to the investors.
 
 
-Investors and financial instittion can use the model for short term prediction of stock market prices to determine the general trend of the amazon prices. However other factor such as fundamental analysis need to be consider before making the final decision.
-
-Other deployment model can also be improved and used for predicting other stock markets other than amazon stocks only.
-
-For better performance of the LSTM model, more data is required for analysis. More data will enhance the model’s ability to recognize patterns and trends.
-
-Carry out sentimental analysis alongside the model to factor in the impact of news and public sentiment on stock prices changes. This analysis will provide valuable contextual information.
-Experiment with different train-test split ratios to evaluate how the model’s performance is affected by the division of data. This will help determine the optimal balance between the training and testing data that gives better performance of the model.
-
-Coming up with a model that can predict other stock markets, not just Amazon. This will provide valuable insights from diverse stock markets to the investors.
 
 ### ** Limitations
-Time series is an intensive machine learning models and hence it required more time for us to come up with optimum parameter and hyper-parameters for the model to perform much better which is a great constrain.
-Stock prices are affected other external factors such as war and disease which are hard to predict and also influence stock prices.
+1. Time series is an intensive machine learning models and hence it required more time for us to come up with optimum parameter and hyper-parameters for the model to perform much better which was a great constrain.
+2. Stock prices are influenced by various external factors, including unforeseen events like wars and diseases/pandemics, which are difficult to predict and can significantly impact market values.
 
 
 
