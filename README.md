@@ -54,8 +54,8 @@ We will use this data analysis to extract meaningful insights that will guide ou
 ### **1. Univariate Analysis**
 
 #### **a. Distributon of The Columns using Histplots**
+<img width="576" alt="Hist- distribution" src="https://github.com/Karapia3/Capstone/assets/128484473/ffa8ad0d-0923-4074-8542-42a5de6d1bf5">
 
-![Distribution of the column using Histoplots](images/distribution.png)
 
 **Observations**
 - The **`Open`, `High`, `Low`, `Close`, `Adj Close`** plots have similar distributions throughout the period under review (2008 to 2023).
@@ -68,7 +68,8 @@ We will use this data analysis to extract meaningful insights that will guide ou
 ## b. Time Series Plots for Open, High, Low, Close, and Adj Close Columns
 The plots below visualize the historical price trends over the period under review.
 
-![Time series plots for open,high,close and adj close columns](images/open price .png)
+<img width="599" alt="Charts" src="https://github.com/Karapia3/Capstone/assets/128484473/8ebccd21-db35-4a43-a467-fb693087cf8c">
+
 
 **Observations**
 - The data seems to have similar seasonality and trend characteristics. This will be confirmed in later sections.
@@ -101,6 +102,9 @@ Hyperparameter tuning using GridSearch CV is done to find the optimal values of 
 The SARIMAX result shows lower AIC of -3523.004 and BIC of -3474.821 indicating a better performance of the model.
 The higher Log Likelihood of 1770.502 shows that the model has a better fit on the data used as compared to the baseline model
 
+![image](https://github.com/Karapia3/Capstone/assets/128484473/7b229ac4-0edf-4a97-a6a1-e8a233aede91)
+
+
 
 #### **Prediction on the Training Data and Test data**
 
@@ -114,15 +118,10 @@ a. XGBOOST TO FIND IMPORTANT FEATURES
 XGBoost's feature importance is used here to provide a ranking of features based on their influence in the model's predictions, aiding in understanding and optimizing feature selection.
 
 ### ** 1.4 . Simple  RNN
-
+- The model's MAE and MAPE values suggest that, on average, the model's predictions have a moderate error of approximately 0.078 units or 14.778% relative error from the actual values.These lower values indicate low performance of the model.
 
 ### ** 1.5 LSTM
-
-
-
-![Sarima Model Predictions](images/SARIMA.png)
-
-
+- The model's MAE and MAPE values suggest that, on average, the model's predictions have a moderate error of approximately 0.078 units or 14.954% relative error from the actual values.These values indicate low performance of the model.
 
 ### **2  Evaluation of Models**
 
@@ -135,12 +134,7 @@ XGBoost's feature importance is used here to provide a ranking of features based
 5	LSTM-Important Features	0.0779	0.0103	0.1013	14.9543	-0.0036
 
 
-SARIMA-2 appears to be the best-performing model among the options listed. It has the highest R2-Score of 0.0025, and the lowest MAE, MSE, and RMSE, indicating that it provides the most accurate predictions with relatively low error rates. The MAPE is also below 10%, suggesting that, on average, its predictions are within 10% of the actual Amazon stock prices.
-FB Prophet, while having a low MAE, MSE, and RMSE but the values are higher as compared to SARIMA-2. It also has higher MAPE which is above 10%, and a negative value of R-2 Score. This indicates that it might not be as accurate as SARIMA-2 in predicting Amazon stock prices.
-The Simple RNN model performs lower than FB Prophet in terms of MAE, MSE, and RMSE, it is not as accurate as SARIMA-2 and FB Prophet, as it has higher error rates.
-The LSTM with original features model with original features has lowest performance as compared to SARIMA-2, FB Prophet and Simple RNN, with slightly higher MAE, MAPE and RMSE. It has the highest MAPE of 23.1175%.
-The LSTM model with important features has a better performance to the LSTM with original features and Simple RNN. However, it still does not perform as well as SARIMA-2 and FB Prophet in terms of accuracy.
-In summary, the SARIMA-2 model outperforms the other models in predicting Amazon stock prices, as it has the lowest MAE, MSE, and RMSE along with a reasonably low MAPE. It is also recorded the highest positive R-Squared Score value. The other models have higher errors and are less accurate in comparison.
+In summary, the **SARIMA-2** model outperforms the other models in predicting Amazon stock prices, as it has the lowest MAE, MSE, and RMSE along with a reasonably low MAPE. It is also  recorded the highest positive R-Squared Score value
 
 
 # ** Conclusion
@@ -173,11 +167,6 @@ Relative Strength Index.
 3. For better performance of the LSTM model, more data is required for analysis. More data will enhance the model’s ability to recognize patterns and trends.
 
 4. Carry out sentimental analysis alongside the model to factor in the impact of news and public sentiment on stock prices changes. This analysis will provide valuable contextual information.
-
-5. Experiment with different train-test split ratios to evaluate how the model’s performance is affected by the division of data. This will help determine the optimal balance between the training and testing data that gives better performance of the model.
-
-6. Coming up with a model that can predict other stock markets, not just Amazon. This will provide valuable insights from diverse stock markets  to the investors.
-
 
 
 ### ** Limitations
