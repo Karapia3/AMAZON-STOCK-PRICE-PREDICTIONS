@@ -25,7 +25,7 @@ To develop a robust stock price prediction model for Amazon stock market.
 ### ** 1.3.2 Specific Objectives 
 To build and implement different models for Amazon stock price prediction.
 
-To evaluate the performance and accuracy of the models using R2 Score, and RMSE.
+To evaluate the performance and accuracy of the models using MSE, RMSE, and R2 Score.
 
 To use the best performing model to forecast Amazon stock prices.
 
