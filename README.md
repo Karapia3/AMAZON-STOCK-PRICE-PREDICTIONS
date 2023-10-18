@@ -23,14 +23,17 @@ To develop a robust stock price prediction model for Amazon stock market.
 ## **1.3.1 Specific Objectives 
 
 ### ** 1.3.2 Specific Objectives 
-To build and implement different models for Amazon stock price prediction
+To build and implement different models for Amazon stock price prediction.
+
 To evaluate the performance and accuracy of the models using R2 Score, and RMSE.
+
 To use the best performing model to forecast Amazon stock prices.
+
 To create a user-friendly dashboard/application for stakeholders to access predictions.
 
 ## **B. Data Understanding and EDA**
 
-During the exploration exercise, the amazon data was checked for the value counts of each column, to understand how various parameters in the columns were distributed The column definitions are displayed below. 
+During the exploration exercise, the amazon data was checked for the value counts of each column, to understand how various parameters in the columns were distributed.The column definitions are displayed below. 
 
 
  #### **Data Features**   
@@ -79,9 +82,9 @@ The plots below visualize the historical price trends over the period under revi
 
 ### **1. Feature Engineering**
 
-c. Lag Features for Adj Close price
+ Lag Features for Adj Close price.
+ 
 Creating lag features will capture the historical behavior of the stock prices.
-Lag features for the adjusted closing price have b
 
 
 
@@ -98,9 +101,14 @@ The SARIMAX result shows lower AIC of -3324.421 and BIC of -3297.723 indicating 
 The higher Log Likelihood of 1667.211 shows that the model has a good fit on the data used
 
 ### ** 1.2 SARIMA 2
-Hyperparameter tuning using GridSearch CV is done to find the optimal values of hyperparameters (p,d,q) to be used SARIMA-2 modeling
-The SARIMAX result shows lower AIC of -3523.004 and BIC of -3474.821 indicating a better performance of the model.
-The higher Log Likelihood of 1770.502 shows that the model has a better fit on the data used as compared to the baseline model
+Hyperparameter tuning using GridSearch CV is done to find the optimal values of hyperparameters (p,d,q) to be used SARIMA-2 modeling.
+*   In the Histogram, the blue KDE line follows closely with the N(0,1) line showing a standard notation for a normal distribution with mean of 0 and standard deviation of 1. This indicates that the residuals are normally distributed.
+
+
+*   The Normal Q-Q plotshows the ordered distribution of Residuals along the linear trend of the sample of a normal distribution with N(0,1) indicating that the residuals are normally distributed.
+*   The Correlogram shows that the time series residuals have low correlation with the lagged version of itself.
+
+*   It is concluded that the SARIMA-2 model provides a better fit that can help in forecasting future values.
 
 ![image](https://github.com/Karapia3/Capstone/assets/128484473/7b229ac4-0edf-4a97-a6a1-e8a233aede91)
 
