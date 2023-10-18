@@ -8,6 +8,7 @@
 • Stock price prediction, especially short-term, is difficult due
 to market volatility. Investors require precise forecasts for
 Amazon stock decisions.
+
 • Creating dependable models for Amazon stock prediction
 aids informed investor decisions. Developing accurate models
 and their practical application is the challenge.
