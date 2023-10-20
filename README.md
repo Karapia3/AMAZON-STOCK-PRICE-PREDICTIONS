@@ -1,33 +1,39 @@
-# Time series analysis and modelling - Stock Market Predictions
+# AMAZON STOCK PRICE PREDICTIONS 
+<img width="480" alt="Bulls and bears" src="https://github.com/Karapia3/Capstone/assets/128484473/7e909eae-0bd9-49ec-8785-4af3c73b6ea0">
 
-![Amazon](images/Amazon price.png)
+
 
 ## **A. Business Overview**
 
-• Stock price prediction is a challenging but
-important task in the financial industry.  
-• Traditional stock price prediction methods
-have limitations.  
+• Stock price prediction, especially short-term, is difficult due
+to market volatility. Investors require precise forecasts for
+Amazon stock decisions.
+
+• Creating dependable models for Amazon stock prediction
+aids informed investor decisions. Developing accurate models
+and their practical application is the challenge.
 
 
 ## **1.2 Problem Statement**
-The  major challenge of this project is to accurately predict the future closing value of a given
-stock across a given period of time in the future using LSTM.
-Bulls and Bears seek to develop a reliable predictive model that helps investors make informed decisions about their Amazon stock holdings to maximize returns while managing risks.
+The primary challenge in predicting stock prices, especially in the short term, is the inherent volatility and unpredictability of the stock market. Investors and fund managers often face the problem of making optimal investment decisions. They need accurate forecasts to decide when to buy, sell, or hold Amazon's stock, but the accuracy of predictions can vary widely. Bulls and Bears seek to develop a reliable predictive model that helps investors make informed decisions about their Amazon stock holdings to maximize returns while managing risks. This problem encompasses the need for accurate predictions and the application of these predictions to real-world investment strategies.
+
 ### **1.3 General Objectives
 To develop a robust stock price prediction model for Amazon stock market.
 
 ## **1.3.1 Specific Objectives 
 
 ### ** 1.3.2 Specific Objectives 
-To build and implement different models for Amazon stock price prediction
-To evaluate the performance and accuracy of the models using R2 Score, and RMSE.
+To build and implement different models for Amazon stock price prediction.
+
+To evaluate the performance and accuracy of the models using MSE, RMSE, and R2 Score.
+
 To use the best performing model to forecast Amazon stock prices.
+
 To create a user-friendly dashboard/application for stakeholders to access predictions.
 
 ## **B. Data Understanding and EDA**
 
-During the exploration exercise, the amazon data was checked for the value counts of each column, to understand how various parameters in the columns were distributed The column definitions are displayed below. 
+During the exploration exercise, the amazon data was checked for the value counts of each column, to understand how various parameters in the columns were distributed.The column definitions are displayed below. 
 
 
  #### **Data Features**   
@@ -51,8 +57,8 @@ We will use this data analysis to extract meaningful insights that will guide ou
 ### **1. Univariate Analysis**
 
 #### **a. Distributon of The Columns using Histplots**
+<img width="576" alt="Hist- distribution" src="https://github.com/Karapia3/Capstone/assets/128484473/ffa8ad0d-0923-4074-8542-42a5de6d1bf5">
 
-![Distribution of the column using Histoplots](images/distribution.png)
 
 **Observations**
 - The **`Open`, `High`, `Low`, `Close`, `Adj Close`** plots have similar distributions throughout the period under review (2008 to 2023).
@@ -65,7 +71,8 @@ We will use this data analysis to extract meaningful insights that will guide ou
 ## b. Time Series Plots for Open, High, Low, Close, and Adj Close Columns
 The plots below visualize the historical price trends over the period under review.
 
-![Time series plots for open,high,close and adj close columns](images/open price .png)
+<img width="599" alt="Charts" src="https://github.com/Karapia3/Capstone/assets/128484473/8ebccd21-db35-4a43-a467-fb693087cf8c">
+
 
 **Observations**
 - The data seems to have similar seasonality and trend characteristics. This will be confirmed in later sections.
@@ -75,9 +82,9 @@ The plots below visualize the historical price trends over the period under revi
 
 ### **1. Feature Engineering**
 
-c. Lag Features for Adj Close price
+ Lag Features for Adj Close price.
+ 
 Creating lag features will capture the historical behavior of the stock prices.
-Lag features for the adjusted closing price have b
 
 
 
@@ -94,9 +101,17 @@ The SARIMAX result shows lower AIC of -3324.421 and BIC of -3297.723 indicating 
 The higher Log Likelihood of 1667.211 shows that the model has a good fit on the data used
 
 ### ** 1.2 SARIMA 2
-Hyperparameter tuning using GridSearch CV is done to find the optimal values of hyperparameters (p,d,q) to be used SARIMA-2 modeling
-The SARIMAX result shows lower AIC of -3523.004 and BIC of -3474.821 indicating a better performance of the model.
-The higher Log Likelihood of 1770.502 shows that the model has a better fit on the data used as compared to the baseline model
+Hyperparameter tuning using GridSearch CV is done to find the optimal values of hyperparameters (p,d,q) to be used SARIMA-2 modeling.
+*   In the Histogram, the blue KDE line follows closely with the N(0,1) line showing a standard notation for a normal distribution with mean of 0 and standard deviation of 1. This indicates that the residuals are normally distributed.
+
+
+*   The Normal Q-Q plotshows the ordered distribution of Residuals along the linear trend of the sample of a normal distribution with N(0,1) indicating that the residuals are normally distributed.
+*   The Correlogram shows that the time series residuals have low correlation with the lagged version of itself.
+
+*   It is concluded that the SARIMA-2 model provides a better fit that can help in forecasting future values.
+
+![image](https://github.com/Karapia3/Capstone/assets/128484473/7b229ac4-0edf-4a97-a6a1-e8a233aede91)
+
 
 
 #### **Prediction on the Training Data and Test data**
@@ -111,65 +126,61 @@ a. XGBOOST TO FIND IMPORTANT FEATURES
 XGBoost's feature importance is used here to provide a ranking of features based on their influence in the model's predictions, aiding in understanding and optimizing feature selection.
 
 ### ** 1.4 . Simple  RNN
-
+- The model's MAE and MAPE values suggest that, on average, the model's predictions have a moderate error of approximately 0.078 units or 14.778% relative error from the actual values.These lower values indicate low performance of the model.
 
 ### ** 1.5 LSTM
-
-
-
-![Sarima Model Predictions](images/SARIMA.png)
-
-
+- The model's MAE and MAPE values suggest that, on average, the model's predictions have a moderate error of approximately 0.078 units or 14.954% relative error from the actual values.These values indicate low performance of the model.
 
 ### **2  Evaluation of Models**
 
-	Model	MAE	MSE	RMSE	MAPE	R2-Score
-0	Baseline Model-SARIMA-1	0.0506	0.0047	0.0683	9.6815	0.0016
-1	SARIMA-2	0.0506	0.0047	0.0683	9.6815	0.0025
-2	FB Prophet	0.0551	0.0058	0.076	10.5142	-0.0138
-3	Simple RNN	0.0779	0.0107	0.1033	14.778	-0.0471
-4	LSTM-Original Features	0.0779	0.0133	0.1153	23.1175	-0.0025
-5	LSTM-Important Features	0.0779	0.0103	0.1013	14.9543	-0.0036
+| Model | MAE | MSE| RMSE| MAPE	| R2-Score | 
+| ----------- | ----------- |----------- |----------- |----------- |----------- |
+| Baseline Model-SARIMA-1 | 0.0506 |	0.0047	| 0.0683 | 9.6815 | 0.0016 |
+| SARIMA-2 | 0.0506 | 0.0047 | 0.0683 |	9.6815 | 0.0025 |
+| FB Prophet | 0.0551 |	0.0058 | 0.076 | 10.5142 | -0.0138 |
+| Simple RNN | 0.0779 | 0.0107 | 0.1033 | 14.778 | -0.0471 |
+| LSTM-Original Features | 0.0779 | 0.0133 | 0.1153 | 23.1175 |	-0.0025 |
+| LSTM-Important Features | 0.0779 | 0.0103 | 0.1013 | 14.9543 | -0.0036 |
 
 
-SARIMA-2 appears to be the best-performing model among the options listed. It has the highest R2-Score of 0.0025, and the lowest MAE, MSE, and RMSE, indicating that it provides the most accurate predictions with relatively low error rates. The MAPE is also below 10%, suggesting that, on average, its predictions are within 10% of the actual Amazon stock prices.
-FB Prophet, while having a low MAE, MSE, and RMSE but the values are higher as compared to SARIMA-2. It also has higher MAPE which is above 10%, and a negative value of R-2 Score. This indicates that it might not be as accurate as SARIMA-2 in predicting Amazon stock prices.
-The Simple RNN model performs lower than FB Prophet in terms of MAE, MSE, and RMSE, it is not as accurate as SARIMA-2 and FB Prophet, as it has higher error rates.
-The LSTM with original features model with original features has lowest performance as compared to SARIMA-2, FB Prophet and Simple RNN, with slightly higher MAE, MAPE and RMSE. It has the highest MAPE of 23.1175%.
-The LSTM model with important features has a better performance to the LSTM with original features and Simple RNN. However, it still does not perform as well as SARIMA-2 and FB Prophet in terms of accuracy.
-In summary, the SARIMA-2 model outperforms the other models in predicting Amazon stock prices, as it has the lowest MAE, MSE, and RMSE along with a reasonably low MAPE. It is also recorded the highest positive R-Squared Score value. The other models have higher errors and are less accurate in comparison.
+In summary, the **SARIMA-2** model outperforms the other models in predicting Amazon stock prices, as it has the lowest MAE, MSE, and RMSE along with a reasonably low MAPE. It is also  recorded the highest positive R-Squared Score value
 
 
 # ** Conclusion
-From our time series analysis SARIMA-2 model performed the best with MAE score of 0.0506, MSE score of 0.0047 RMSE score of 0.0683 and MAPE score of 9.6815 compared to other models we used which were:
+From our time series analysis SARIMA-2 model performed the best with MAE score of 0.0506, MSE score of 0.0047 RMSE score of 0.0683 and MAPE score of 9.6815 compared to the other models we used which were:
+1. FB Prophet
+2. Simple RNN
+3. LSTM-original features
+4. LSTM-Important features
 
-FB Prophet
-Simple RNN
-LSTM-original features
-LSTM-Important features
 SARIMA-2 model performed well for short term predictions however long term predictions brought wide variations.
 
-The top 8 features which highly influenced the price predictions in the amazon stock market are: Close, High, Returns, Rolling_Std, Volume, Open, ROC, RSI.
+
+The top 8 features which highly influenced the price predictions in the amazon stock market are:
+Close price,
+Highest price,
+Returns,
+Rolling_Std,
+Volume,
+Open price,
+Rate Of Change,
+Relative Strength Index.
 
 
 
 # ** Recommendition
+1. Investors and financial institutions can use the model for short term prediction of Amazon stock prices to determine the general trend of the amazon prices. However other factor such as fundamental analysis need to be consider before making the final decision.
 
+2. Our deployment model can also be improved and used for predicting other stock markets other than Amazon stocks only.
 
-Investors and financial instittion can use the model for short term prediction of stock market prices to determine the general trend of the amazon prices. However other factor such as fundamental analysis need to be consider before making the final decision.
+3. For better performance of the LSTM model, more data is required for analysis. More data will enhance the model’s ability to recognize patterns and trends.
 
-Other deployment model can also be improved and used for predicting other stock markets other than amazon stocks only.
+4. Carry out sentimental analysis alongside the model to factor in the impact of news and public sentiment on stock prices changes. This analysis will provide valuable contextual information.
 
-For better performance of the LSTM model, more data is required for analysis. More data will enhance the model’s ability to recognize patterns and trends.
-
-Carry out sentimental analysis alongside the model to factor in the impact of news and public sentiment on stock prices changes. This analysis will provide valuable contextual information.
-Experiment with different train-test split ratios to evaluate how the model’s performance is affected by the division of data. This will help determine the optimal balance between the training and testing data that gives better performance of the model.
-
-Coming up with a model that can predict other stock markets, not just Amazon. This will provide valuable insights from diverse stock markets to the investors.
 
 ### ** Limitations
-Time series is an intensive machine learning models and hence it required more time for us to come up with optimum parameter and hyper-parameters for the model to perform much better which is a great constrain.
-Stock prices are affected other external factors such as war and disease which are hard to predict and also influence stock prices.
+1. Time series is an intensive machine learning models and hence it required more time for us to come up with optimum parameter and hyper-parameters for the model to perform much better which was a great constrain.
+2. Stock prices are influenced by various external factors, including unforeseen events like wars and diseases/pandemics, which are difficult to predict and can significantly impact market values.
 
 
 
