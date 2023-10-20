@@ -133,13 +133,14 @@ XGBoost's feature importance is used here to provide a ranking of features based
 
 ### **2  Evaluation of Models**
 
-	Model	MAE	MSE	RMSE	MAPE	R2-Score
-0	Baseline Model-SARIMA-1	0.0506	0.0047	0.0683	9.6815	0.0016
-1	SARIMA-2	0.0506	0.0047	0.0683	9.6815	0.0025
-2	FB Prophet	0.0551	0.0058	0.076	10.5142	-0.0138
-3	Simple RNN	0.0779	0.0107	0.1033	14.778	-0.0471
-4	LSTM-Original Features	0.0779	0.0133	0.1153	23.1175	-0.0025
-5	LSTM-Important Features	0.0779	0.0103	0.1013	14.9543	-0.0036
+| Model | MAE | MSE| RMSE| MAPE	| R2-Score | 
+| ----------- | ----------- |----------- |----------- |----------- |----------- |
+| Baseline Model-SARIMA-1 | 0.0506 |	0.0047	| 0.0683 | 9.6815 | 0.0016 |
+| SARIMA-2 | 0.0506 | 0.0047 | 0.0683 |	9.6815 | 0.0025 |
+| FB Prophet | 0.0551 |	0.0058 | 0.076 | 10.5142 | -0.0138 |
+| Simple RNN | 0.0779 | 0.0107 | 0.1033 | 14.778 | -0.0471 |
+| LSTM-Original Features | 0.0779 | 0.0133 | 0.1153 | 23.1175 |	-0.0025 |
+| LSTM-Important Features | 0.0779 | 0.0103 | 0.1013 | 14.9543 | -0.0036 |
 
 
 In summary, the **SARIMA-2** model outperforms the other models in predicting Amazon stock prices, as it has the lowest MAE, MSE, and RMSE along with a reasonably low MAPE. It is also  recorded the highest positive R-Squared Score value
